@@ -1,0 +1,7 @@
+{
+    "tableName": "proposals",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "created_date",
+    "sortKeyType": "N"
+}

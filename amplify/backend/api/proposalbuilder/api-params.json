@@ -1,0 +1,45 @@
+{
+    "paths": [
+        {
+            "name": "/customer/{id}",
+            "lambdaFunction": "proposalcustomer",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/customer/*"
+        }
+    ],
+    "resourceName": "proposalbuilder",
+    "apiName": "proposalbuilder",
+    "functionArns": [
+        {
+            "lambdaFunction": "proposalcustomer"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 1,
+        "authRoleName": "amplify-authcra-devc-182012-authRole",
+        "unAuthRoleName": "amplify-authcra-devc-182012-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "proposalcustomer",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
